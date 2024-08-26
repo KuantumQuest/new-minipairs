@@ -45,7 +45,7 @@ M.setup_pairs = function()
 			{ "'", "'" },
 			{ '"', '"' },
 		}
-		local s = ls.extend_decorator.apply(ls.snippet, { wordTrig = true, snippetType = "autosnippet", priority = 0 })
+		local s = ls.extend_decorator.apply(ls.snippet, { wordTrig = false, snippetType = "autosnippet", priority = 0 })
 		for _, pair in ipairs(values) do
 			vim.list_extend(snippets, {
 				s({ trig = pair[1], name = pair[1] .. pair[2] }, { t(pair[1]), d(1, get_visual), t(pair[2]), i(0) }),
